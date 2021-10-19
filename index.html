@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Giphy Party!</title>
+</head>
+
+<body>
+    <h1>Giphy party!</h1>
+    <form>
+        <label for="gif_theme">Enter a search term for your GIF:</label>
+        <input type="text" id="gif_term" name="gif_term" placeholder="Enter a term">
+        <button id="search_button">Search Giphy!</button>
+        <button id="delete_button">Delete Images</button>
+    </form>
+    <div id="container"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
