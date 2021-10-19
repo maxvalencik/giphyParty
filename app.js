@@ -5,7 +5,7 @@
 //Async function to request the gif on Giphy using a serchTerm
 async function getGif(searchTerm){
     //get request with api_key and searchTerm as parameter (www.apigiphy.com for doc)
-    const res = await axios.get(`http://api.giphy.com/v1/gifs/search?api_key=coxDFmkKcYghlmS9i890R0RXkv2N0m9O&q=${searchTerm}`);
+    const res = await axios.get(`https://api.giphy.com/v1/gifs/search?api_key=coxDFmkKcYghlmS9i890R0RXkv2N0m9O&q=${searchTerm}`);
     //the request return a list of 50 gif. Select one randomly
     let randomIndex = Math.floor(Math.random() * 50);
     //url to original image
