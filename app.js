@@ -8,13 +8,18 @@ async function getGif(searchTerm){
     const res = await axios.get(`http://api.giphy.com/v1/gifs/search?api_key=coxDFmkKcYghlmS9i890R0RXkv2N0m9O&q=${searchTerm}`);
     //the request return a list of 50 gif. Select one randomly
     let randomIndex = Math.floor(Math.random() * 50);
+    
     //url to original image
-    const gifImage = res.data.data[randomIndex].images.original.url;
-    // add the selected gif to the dom
-    const container = document.querySelector('#container');
-    const image = document.createElement('img');//create image to append to the container in the dom
-    image.setAttribute('src', gifImage);
-    container.append(image);
+    try{
+        const gifImage = res.data.data[randomIndex].images.original.url;
+        // add the selected gif to the dom
+        const container = document.querySelector('#container');
+        const image = document.createElement('img');//create image to append to the container in the dom
+        image.setAttribute('src', gifImage);
+        container.append(image);
+    } catch (e){
+        alert ("No GIF found...try again!");
+    }
 }
 
 function deleteImage(){
@@ -34,7 +39,7 @@ searchButton.addEventListener('click', (e) => {
     // Get input value from form
    const searchTerm = document.querySelector('#gif_term').value;
    // Call getGif function
-   getGif(searchTerm);
+    getGif(searchTerm);
    //reset form
    document.querySelector('form').reset();
 });
